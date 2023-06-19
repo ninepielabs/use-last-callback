@@ -24,12 +24,17 @@ const mockPromise = (content: string) => {
 }
 
 const Page = () => {
-
+  const [c, setC] = useState(0)
   const lastClickCallback = useLastCallback(mockPromise)
 
   return (
     <div>
-      <button onClick={lastClickCallback}>Button</button>
+      <button onClick={() => {
+        lastCallback(c.toString())
+        setC(v => v + 1)
+      }}>
+      Button
+    </button>
     </div>
   )
 }
