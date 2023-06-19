@@ -2,6 +2,12 @@
 
 React hooks for last callback
 
+## Install
+
+```
+yarn add use-last-callback
+```
+
 ## Usage
 
 ```tsx

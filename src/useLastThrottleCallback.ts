@@ -26,14 +26,12 @@ function useLastThrottleCallback<T extends (...args: any) => ReturnType<T>>(
       argsQueueRef.current = []
       isRunningRef.current = true
 
-      Promise
-        .resolve(callbackRef.current(...currentArguments))
-        .finally(() => {
-          timerIdRef.current = window.setTimeout(() => {
-            isRunningRef.current = false
-          }, delay)
+      Promise.resolve(callbackRef.current(...currentArguments)).finally(() => {
+        timerIdRef.current = window.setTimeout(() => {
+          isRunningRef.current = false
           run()
-        })
+        }, delay)
+      })
     }
 
     const result = ((...args: any) => {
