@@ -30,7 +30,7 @@ const Page = () => {
   return (
     <div>
       <button onClick={() => {
-        lastCallback(c.toString())
+        lastClickCallback(c.toString())
         setC(v => v + 1)
       }}>
       Button
